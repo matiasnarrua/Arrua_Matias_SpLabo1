@@ -128,13 +128,13 @@ static int addNode(LinkedList* this, int nodeIndex,void* pElement)
     		   pNewNode->pNextNode = this->pFirstNode;
     		   this->pFirstNode = pNewNode;
     	   }
-    	   else if(nodeIndex == len){
+    	   else if(nodeIndex < len){
     		   nodeIndex = nodeIndex-1;
     		                  pPreviousNode = getNode(this, nodeIndex);
     		                  pNewNode->pNextNode = pPreviousNode->pNextNode;
     		                  pPreviousNode->pNextNode = pNewNode;
     	   }
-    	   else if(nodeIndex<len)
+    	   else if(nodeIndex==len)
     	   {
     		   nodeIndex = nodeIndex-1;
            pPreviousNode = getNode(this, nodeIndex);
